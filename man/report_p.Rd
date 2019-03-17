@@ -7,7 +7,7 @@
 report_p(pvalue = NULL, markdown = T)
 }
 \arguments{
-\item{pvalue}{statistical object to report}
+\item{pvalue}{object containing pvalue to report}
 
 \item{markdown}{should the output be formatted for Markdown (e.g., *p* ) or plain text?}
 }

@@ -9,5 +9,7 @@ Description: Automatically generate the results of common statistical analyses f
 License: GPL-3
 Depends: R (>= 3.1.0)
 Encoding: UTF-8
+URL: https://github.com/durkeepk/report
+BugReports: https://github.com/durkeepk/report/issues
 LazyData: true
 RoxygenNote: 6.1.1
