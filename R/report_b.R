@@ -1,7 +1,8 @@
 #' Generate an in-text report of regression coeffiecients
 #'
 #' @param coefficient object containing regression coefficient to report
-#' @param markdown should the output be formatted for Markdown (e.g., *p*) or plain text [T/F]?
+#' @param markdown should the output be formatted for Markdown (e.g., *b* vs b)
+#' or plain text [T/F]?
 #' @param standardize is the coefficient undstandardized [F] or standardized [T]
 #' @return unstandardized or standardized regression coefficient
 #' rounded to three decimal places (e.g., b = .123, beta = .123).

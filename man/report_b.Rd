@@ -9,7 +9,8 @@ report_b(coefficient = NULL, markdown = T, standardize = F)
 \arguments{
 \item{coefficient}{object containing regression coefficient to report}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *p*) or plain text [T/F]?}
+\item{markdown}{should the output be formatted for Markdown (e.g., *b* vs b)
+or plain text [T/F]?}
 
 \item{standardize}{is the coefficient undstandardized [F] or standardized [T]}
 }
