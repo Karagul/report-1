@@ -1,6 +1,6 @@
 #' Automate the reporting of p-values
 #'
-#' @param pvalue statistical object to report
+#' @param pvalue object containing pvalue to report
 #' @param markdown should the output be formatted for Markdown (e.g., *p* ) or plain text?
 #' @return p-value rounded to three decimal places if greater than .001. If less than,
 #' .001 defaults to p < .001.
