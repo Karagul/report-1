@@ -1,0 +1,13 @@
+Package: report
+Type: Package
+Title: Automate Reporting of Common Statistical Analyses
+Version: 0.1.0
+Authors@R: person("Patrick", "Durkee", email = "durkeepk@gmail.com",
+  role = c("aut", "cre"))
+Description: Automatically generate the results of common statistical analyses for 
+    in-text reporting in R Markdown.
+License: GPL-3
+Depends: R (>= 3.1.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
