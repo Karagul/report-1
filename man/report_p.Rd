@@ -9,7 +9,8 @@ report_p(pvalue = NULL, markdown = T)
 \arguments{
 \item{pvalue}{object containing pvalue to report}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *p* ) or plain text?}
+\item{markdown}{should the output be formatted for Markdown (e.g., *p* ) or
+plain text [T/F]?}
 }
 \value{
 p-value rounded to three decimal places if greater than .001. If less than,
