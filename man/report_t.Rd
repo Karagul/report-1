@@ -9,7 +9,7 @@ report_t(tresults = NULL, markdown = T)
 \arguments{
 \item{tresults}{object containing t-test results from t.test()}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *b* vs b)
+\item{markdown}{should the output be formatted for Markdown (e.g., *t* vs t)
 or plain text [T/F]?}
 }
 \value{

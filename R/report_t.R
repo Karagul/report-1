@@ -1,7 +1,7 @@
 #' Generate an in-text report of t-test results
 #'
 #' @param tresults object containing t-test results from t.test()
-#' @param markdown should the output be formatted for Markdown (e.g., *b* vs b)
+#' @param markdown should the output be formatted for Markdown (e.g., *t* vs t)
 #' or plain text [T/F]?
 #' @return t-value reported to two decimal places, degrees of freedom, and p-value reported
 #' to three decimal places
