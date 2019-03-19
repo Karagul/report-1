@@ -2,4 +2,5 @@
 
 export(report_b)
 export(report_p)
+export(report_r)
 export(report_t)
