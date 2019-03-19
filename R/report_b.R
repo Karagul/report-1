@@ -16,28 +16,32 @@
 
 
 
-report_b <- function(coefficient = NULL, markdown = T, standardize = F){
-  if(markdown == T){
-    if(standardize == F){
-      bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
-      b_report <- paste("*b* =", bval)
+
+report_b <-
+  function(coefficient = NULL,
+           markdown = T,
+           standardize = F) {
+    if (markdown == T) {
+      if (standardize == F) {
+        bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
+        b_report <- paste("*b* =", bval)
+      }
+      if (standardize == T) {
+        bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
+        b_report <- paste("\beta", " = ", bval, sep = "")
+      }
     }
-    if(standardize == T){
-      bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
-      b_report <- paste("\beta", " = ", bval, sep = "")
+    if (markdown == F) {
+      if (standardize == F) {
+        bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
+        b_report <- paste("b =", bval)
+      }
+      if (standardize == T) {
+        bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
+        b_report <- paste("beta", " = ", bval, sep = "")
+      }
     }
+    return(noquote(b_report))
   }
-  if(markdown == F){
-    if(standardize == F){
-      bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
-      b_report <- paste("b =", bval)
-    }
-    if(standardize == T){
-      bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
-      b_report <- paste("beta", " = ", bval, sep = "")
-    }
-  }
-  return(noquote(b_report))
-}
 
 

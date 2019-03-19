@@ -13,7 +13,9 @@
 #' @export
 
 
-report_t <- function(tresults = NULL, markdown = T) {
+
+report_t <- function(tresults = NULL,
+                     markdown = T) {
   # save objects needed to report
   tval <- tresults[[1]]
   degfree <- tresults[[2]]
