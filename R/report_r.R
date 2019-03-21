@@ -4,7 +4,7 @@
 #' @param markdown should the output be formatted for Markdown (e.g., *r* vs r)
 #' or plain text [T/F]?
 #' @return correlation coefficient reported to three decimal places (no leading zero)
-#'  @examples
+#' @examples
 #' x1 <- rnorm(200, 10, 2)
 #' x2 <- rnorm(200, 15, 1.5)
 #' r_coef <- cor(x1, x2)
