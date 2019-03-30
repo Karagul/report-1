@@ -3,7 +3,9 @@
 #' @param pvalue object containing pvalue to report
 #' @param format How should the output be formatted? Available options are:
 #' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
-#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
+#' @param inline Should non-plain results be formatted for inline (\code{TRUE})
+#' or for copy-pasting (\code{FALSE})?
+#' (default is \code{TRUE})
 #' @return p-value rounded to three decimal places if greater than .001. If less than,
 #' .001 defaults to p < .001.
 #' @examples

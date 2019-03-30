@@ -3,7 +3,9 @@
 #' @param corcoef object containing correlation coefficient
 #' @param format How should the output be formatted? Available options are:
 #' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
-#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
+#' @param inline Should non-plain results be formatted for inline (\code{TRUE})
+#' or for copy-pasting (\code{FALSE})?
+#' (default is \code{TRUE})
 #' @return correlation coefficient reported to three decimal places (no leading zero)
 #' @examples
 #' x1 <- rnorm(200, 10, 2)

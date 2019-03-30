@@ -3,7 +3,9 @@
 #' @param coefficient object containing regression coefficient to report
 #' @param format How should the output be formatted? Available options are:
 #' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
-#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
+#' @param inline Should non-plain results be formatted for inline (\code{TRUE})
+#' or for copy-pasting (\code{FALSE})?
+#' (default is \code{TRUE})
 #' @param standardize is the coefficient undstandardized [F] or standardized [T]
 #' @return unstandardized or standardized regression coefficient
 #' rounded to three decimal places (e.g., b = .123, beta = .123).

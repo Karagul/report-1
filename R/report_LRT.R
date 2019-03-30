@@ -3,8 +3,11 @@
 #' @param result Results from likelihood ratio test to report
 #' @param format How should the output be formatted? Available options are:
 #' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
-#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
-#' @return Formatted results containing chi-square statistic, degrees of freedom, and p-value.
+#' @param inline Should non-plain results be formatted for inline (\code{TRUE})
+#' or for copy-pasting (\code{FALSE})?
+#' (default is \code{TRUE})
+#' @return Formatted results containing chi-square statistic, degrees of freedom,
+#' and p-value.
 #' @examples
 #' \dontrun{
 #' politeness <- read.csv("http://www.bodowinter.com/tutorial/politeness_data.csv")

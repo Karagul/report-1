@@ -3,7 +3,9 @@
 #' @param variable variable to report descriptives for
 #' @param format How should the output be formatted? Available options are:
 #' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
-#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
+#' @param inline Should non-plain results be formatted for inline (\code{TRUE})
+#' or for copy-pasting (\code{FALSE})?
+#' (default is \code{TRUE})
 #' @return Mean and SD reported to two decimal places
 #' @examples
 #' age <- rnorm(110, 21, 3.4)

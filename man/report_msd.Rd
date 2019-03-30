@@ -12,7 +12,9 @@ report_msd(variable = NULL, format = "rmarkdown", inline = T)
 \item{format}{How should the output be formatted? Available options are:
 \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}}
 
-\item{inline}{Should non-plain results be formatted for inline or for copy-pasting?}
+\item{inline}{Should non-plain results be formatted for inline (\code{TRUE})
+or for copy-pasting (\code{FALSE})?
+(default is \code{TRUE})}
 }
 \value{
 Mean and SD reported to two decimal places
