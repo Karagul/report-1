@@ -14,8 +14,8 @@ report_p <- function(pvalue = NULL, markdown = T) {
   if (markdown == T) {
     if (round(pvalue, 3) > 0) {
       pval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", pvalue))
-      #latex_p <- switch("p", "p" = "$\\textit{p}$")
-      p_report <- paste("$\\textit{p}$", " = ", pval, sep = "")
+      latex_p <- "$\\textit{p}$"
+      p_report <- paste(latex_p, " = ", pval, sep = "")
     }
     if (round(pvalue, 3) == 0) {
       p_report <- paste(latex_p, "< .001")
