@@ -4,13 +4,15 @@
 \alias{report_t}
 \title{Generate an in-text report of t-test results}
 \usage{
-report_t(tresults = NULL, markdown = T)
+report_t(tresults = NULL, format = "rmarkdown", inline = T)
 }
 \arguments{
 \item{tresults}{object containing t-test results from t.test()}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *t* vs t)
-or plain text [T/F]?}
+\item{format}{How should the output be formatted? Available options are:
+\code{"plain"}, \code{"latex"}, \code{"rmarkdown"}}
+
+\item{inline}{Should non-plain results be formatted for inline or for copy-pasting?}
 }
 \value{
 t-value reported to two decimal places, degrees of freedom, and p-value reported

@@ -1,8 +1,9 @@
 #' Generate an in-text report of correlation results
 #'
 #' @param corcoef object containing correlation coefficient
-#' @param markdown should the output be formatted for Markdown (e.g., *r* vs r)
-#' or plain text [T/F]?
+#' @param format How should the output be formatted? Available options are:
+#' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
+#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
 #' @return correlation coefficient reported to three decimal places (no leading zero)
 #' @examples
 #' x1 <- rnorm(200, 10, 2)
@@ -12,14 +13,23 @@
 #' @export
 
 
-report_r <- function(corcoef = NULL, markdown = T) {
-  if (markdown == T) {
+report_r <- function(corcoef = NULL, format = 'rmarkdown', inline = T) {
+  if (format != 'plain') {
     rcoef <- sub("^(-?)0.", "\\1.", sprintf("%.3f", corcoef))
     r_report <- paste("$\\textit{r}$ =", rcoef)
   }
-  if (markdown == F) {
+  if (format == 'plain') {
     rcoef <- sub("^(-?)0.", "\\1.", sprintf("%.3f", corcoef))
     r_report <- paste("r =", rcoef)
   }
-  return(noquote(r_report))
+  # return conditions
+  if (inline == F){
+    return(cat(r_report))
+  }
+  if (format == 'rmarkdown'){
+    return(noquote(r_report))
+  }
+  if (format != 'rmarkdown'){
+    return(cat(r_report))
+  }
 }

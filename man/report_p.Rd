@@ -4,13 +4,15 @@
 \alias{report_p}
 \title{Automate the reporting of p-values}
 \usage{
-report_p(pvalue = NULL, markdown = T)
+report_p(pvalue = NULL, format = "rmarkdown", inline = T)
 }
 \arguments{
 \item{pvalue}{object containing pvalue to report}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *p* ) or
-plain text [T/F]?}
+\item{format}{How should the output be formatted? Available options are:
+\code{"plain"}, \code{"latex"}, \code{"rmarkdown"}}
+
+\item{inline}{Should non-plain results be formatted for inline or for copy-pasting?}
 }
 \value{
 p-value rounded to three decimal places if greater than .001. If less than,

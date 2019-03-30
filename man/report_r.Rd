@@ -4,13 +4,15 @@
 \alias{report_r}
 \title{Generate an in-text report of correlation results}
 \usage{
-report_r(corcoef = NULL, markdown = T)
+report_r(corcoef = NULL, format = "rmarkdown", inline = T)
 }
 \arguments{
 \item{corcoef}{object containing correlation coefficient}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *r* vs r)
-or plain text [T/F]?}
+\item{format}{How should the output be formatted? Available options are:
+\code{"plain"}, \code{"latex"}, \code{"rmarkdown"}}
+
+\item{inline}{Should non-plain results be formatted for inline or for copy-pasting?}
 }
 \value{
 correlation coefficient reported to three decimal places (no leading zero)

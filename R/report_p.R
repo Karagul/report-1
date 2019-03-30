@@ -1,8 +1,9 @@
 #' Automate the reporting of p-values
 #'
 #' @param pvalue object containing pvalue to report
-#' @param markdown should the output be formatted for Markdown (e.g., *p* ) or
-#' plain text [T/F]?
+#' @param format How should the output be formatted? Available options are:
+#' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
+#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
 #' @return p-value rounded to three decimal places if greater than .001. If less than,
 #' .001 defaults to p < .001.
 #' @examples
@@ -10,18 +11,17 @@
 #' @export
 
 
-report_p <- function(pvalue = NULL, markdown = T) {
-  if (markdown == T) {
+report_p <- function(pvalue = NULL, format = 'rmarkdown', inline = T) {
+  if (format != 'plain') {
     if (round(pvalue, 3) > 0) {
       pval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", pvalue))
-      #latex_p <- "$\\textit{p}$"
       p_report <- paste("$\\textit{p}$", " = ", pval, sep = "")
     }
     if (round(pvalue, 3) == 0) {
       p_report <- paste("$\\textit{p}$", " < .001")
     }
   }
-  if (markdown == F) {
+  if (format == 'plain') {
     if (round(pvalue, 3) > 0) {
       pval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", pvalue))
       p_report <- paste("p =", pval)
@@ -30,7 +30,17 @@ report_p <- function(pvalue = NULL, markdown = T) {
       p_report <- paste("p < .001")
     }
   }
-  return(noquote(p_report))
+
+  # return conditions
+  if (inline == F){
+    return(cat(p_report))
+  }
+  if (format == 'rmarkdown'){
+    return(noquote(p_report))
+    }
+  if (format != 'rmarkdown'){
+    return(cat(p_report))
+  }
 }
 
 

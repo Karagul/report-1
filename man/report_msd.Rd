@@ -4,13 +4,15 @@
 \alias{report_msd}
 \title{Generate an in-text report of means and standard deviations}
 \usage{
-report_msd(var = NULL, markdown = T)
+report_msd(variable = NULL, format = "rmarkdown", inline = T)
 }
 \arguments{
-\item{var}{variable to report descriptives for}
+\item{variable}{variable to report descriptives for}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *M* vs M)
-or plain text [T/F]?}
+\item{format}{How should the output be formatted? Available options are:
+\code{"plain"}, \code{"latex"}, \code{"rmarkdown"}}
+
+\item{inline}{Should non-plain results be formatted for inline or for copy-pasting?}
 }
 \value{
 Mean and SD reported to two decimal places

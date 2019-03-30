@@ -4,13 +4,16 @@
 \alias{report_b}
 \title{Generate an in-text report of regression coeffiecients}
 \usage{
-report_b(coefficient = NULL, markdown = T, standardize = F)
+report_b(coefficient = NULL, format = "rmarkdown", inline = T,
+  standardize = F)
 }
 \arguments{
 \item{coefficient}{object containing regression coefficient to report}
 
-\item{markdown}{should the output be formatted for Markdown (e.g., *b* vs b)
-or plain text [T/F]?}
+\item{format}{How should the output be formatted? Available options are:
+\code{"plain"}, \code{"latex"}, \code{"rmarkdown"}}
+
+\item{inline}{Should non-plain results be formatted for inline or for copy-pasting?}
 
 \item{standardize}{is the coefficient undstandardized [F] or standardized [T]}
 }
@@ -26,5 +29,5 @@ x <- c(1:25)
 y = c(1, 1, 2, 3, 4, 5, 6, 2, 4, 6, 7, 2, 7, 3, 1, 1, 1, 3, 4, 6, 7, 7, 1, 4, 1)
 model <- lm(y ~ x)
 coef <- summary(model)$coefficients[2, 1]
-report_b(coef, standardize = FALSE, markdown = FALSE)
+report_b(coef)
 }

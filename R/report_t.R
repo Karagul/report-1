@@ -1,8 +1,9 @@
 #' Generate an in-text report of t-test results
 #'
 #' @param tresults object containing t-test results from t.test()
-#' @param markdown should the output be formatted for Markdown (e.g., *t* vs t)
-#' or plain text [T/F]?
+#' @param format How should the output be formatted? Available options are:
+#' \code{"plain"}, \code{"latex"}, \code{"rmarkdown"}
+#' @param inline Should non-plain results be formatted for inline or for copy-pasting?
 #' @return t-value reported to two decimal places, degrees of freedom, and p-value reported
 #' to three decimal places
 #' @examples
@@ -15,14 +16,14 @@
 
 
 report_t <- function(tresults = NULL,
-                     markdown = T) {
+                     format = 'rmarkdown', inline = T) {
   # save objects needed to report
   tval <- tresults[[1]]
   degfree <- tresults[[2]]
   pvalue <- tresults[[3]]
 
   # format results for markdown
-  if (markdown == T) {
+  if (format != 'plain') {
     # get t stat, df, convert to two decimal places, format report
     tval <- sub("^(-?)0.", "\\1.", sprintf("%.2f", tval))
     t_report <-
@@ -40,7 +41,7 @@ report_t <- function(tresults = NULL,
   }
 
   # format results for plain text
-  if (markdown == F) {
+  if (format == 'plain') {
     # get t stat, df, convert to two decimal places, format report
     tval <- sub("^(-?)0.", "\\1.", sprintf("%.2f", tval))
     t_report <-
@@ -56,5 +57,14 @@ report_t <- function(tresults = NULL,
     # report the t statistic, df, and p-value together
     full_report <- paste(t_report, p_report, sep = ", ")
   }
-  return(noquote(full_report))
+  # return conditions
+  if (inline == F){
+    return(cat(full_report))
+  }
+  if (format == 'rmarkdown'){
+    return(noquote(full_report))
+  }
+  if (format != 'rmarkdown'){
+    return(cat(full_report))
+  }
 }

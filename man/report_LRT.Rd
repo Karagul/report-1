@@ -4,13 +4,15 @@
 \alias{report_LRT}
 \title{Generate an in-text report of a Likelihood Ratio Test}
 \usage{
-report_LRT(result = NULL, markdown = T)
+report_LRT(result = NULL, format = "rmarkdown", inline = T)
 }
 \arguments{
 \item{result}{Results from likelihood ratio test to report}
 
-\item{markdown}{Markdown should the output be formatted for Markdown/Latex
-or plain text [T/F]?}
+\item{format}{How should the output be formatted? Available options are:
+\code{"plain"}, \code{"latex"}, \code{"rmarkdown"}}
+
+\item{inline}{Should non-plain results be formatted for inline or for copy-pasting?}
 }
 \value{
 Formatted results containing chi-square statistic, degrees of freedom, and p-value.
@@ -25,6 +27,6 @@ library(lme4)
 max.model <- lmer(frequency ~ attitude + (1 | subject) + (1 | scenario), data=politeness)
 reduced.model <- lmer(frequency ~ attitude + (1 | subject), data=politeness)
 results <- anova(reduced.model, max.model, refit = F)[2, ]
-report_LRT(result = results, markdown = T)
+report_LRT(result = results, format = 'rmarkdown')
 }
 }
