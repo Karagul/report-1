@@ -15,7 +15,7 @@
 report_r <- function(corcoef = NULL, markdown = T) {
   if (markdown == T) {
     rcoef <- sub("^(-?)0.", "\\1.", sprintf("%.3f", corcoef))
-    r_report <- paste("*r* =", rcoef)
+    r_report <- paste("$\\textit{r}$ =", rcoef)
   }
   if (markdown == F) {
     rcoef <- sub("^(-?)0.", "\\1.", sprintf("%.3f", corcoef))

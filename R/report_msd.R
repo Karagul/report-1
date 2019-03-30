@@ -12,10 +12,10 @@
 
 report_msd <- function(var = NULL, markdown = T) {
   if (markdown == T) {
-    MSD_report <- paste("*M* = ",
+    MSD_report <- paste("$\\textit{M}$ = ",
                         sprintf('%.2f', mean(var, na.rm = T)),
                         ", ",
-                        "*SD* = ",
+                        "$\\textit{SD}$ = ",
                         sprintf('%.2f', sd(var, na.rm = T)),
                         sep = "")
   }

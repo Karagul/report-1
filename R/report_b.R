@@ -24,11 +24,11 @@ report_b <-
     if (markdown == T) {
       if (standardize == F) {
         bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
-        b_report <- paste("*b* =", bval)
+        b_report <- paste("$\\textit{b}$ =", bval)
       }
       if (standardize == T) {
         bval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", coefficient))
-        b_report <- paste("\beta", " = ", bval, sep = "")
+        b_report <- paste("$\\beta$", " = ", bval, sep = "")
       }
     }
     if (markdown == F) {

@@ -26,14 +26,14 @@ report_t <- function(tresults = NULL,
     # get t stat, df, convert to two decimal places, format report
     tval <- sub("^(-?)0.", "\\1.", sprintf("%.2f", tval))
     t_report <-
-      paste("*t*", "(", round(degfree, 0), ")", " = ", tval, sep = "")
+      paste("$\\textit{t}$", "(", round(degfree, 0), ")", " = ", tval, sep = "")
     # get and format p-value
     if (round(pvalue, 3) > 0) {
       pval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", pvalue))
-      p_report <- paste("*p* =", pval)
+      p_report <- paste("$\\textit{p}$ =", pval)
     }
     if (round(pvalue, 3) == 0) {
-      p_report <- paste("*p* < .001")
+      p_report <- paste("$\\textit{p}$ < .001")
     }
     # report the t statistic, df, and p-value together
     full_report <- paste(t_report, p_report, sep = ", ")
