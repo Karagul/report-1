@@ -29,7 +29,7 @@ report_p <- function(pvalue = NULL, markdown = T) {
       p_report <- paste("p < .001")
     }
   }
-  return(noquote(p_report))
+  return(noquote(cat(p_report)))
 }
 
 
