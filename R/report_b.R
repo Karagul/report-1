@@ -41,7 +41,7 @@ report_b <-
         b_report <- paste("beta", " = ", bval, sep = "")
       }
     }
-    return(noquote(b_report))
+    return(cat(b_report))
   }
 
 

@@ -27,5 +27,5 @@ report_msd <- function(var = NULL, markdown = T) {
                         sprintf('%.2f', sd(var, na.rm = T)),
                         sep = "")
   }
-  return(noquote(MSD_report))
+  return(cat(MSD_report))
 }

@@ -21,5 +21,5 @@ report_r <- function(corcoef = NULL, markdown = T) {
     rcoef <- sub("^(-?)0.", "\\1.", sprintf("%.3f", corcoef))
     r_report <- paste("r =", rcoef)
   }
-  return(noquote(r_report))
+  return(cat(r_report))
 }
