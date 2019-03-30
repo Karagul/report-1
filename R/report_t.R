@@ -56,5 +56,5 @@ report_t <- function(tresults = NULL,
     # report the t statistic, df, and p-value together
     full_report <- paste(t_report, p_report, sep = ", ")
   }
-  return(cat(full_report))
+  return(noquote(full_report))
 }

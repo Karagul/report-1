@@ -53,6 +53,6 @@ report_LRT <- function(result = NULL, markdown = T) {
                           "p < .001", sep = "")
     }
   }
-  return(cat(LRT_report))
+  return(noquote(LRT_report))
 }
 
