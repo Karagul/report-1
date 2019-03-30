@@ -1,7 +1,7 @@
 Package: report
 Type: Package
 Title: Automate Reporting of Common Statistical Analyses
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: person("Patrick", "Durkee", email = "durkeepk@gmail.com",
   role = c("aut", "cre"))
 Description: Automatically generate the results of common statistical analyses for 
