@@ -14,12 +14,13 @@ or plain text [T/F]?}
 }
 \value{
 correlation coefficient reported to three decimal places (no leading zero)
- @examples
+}
+\description{
+Generate an in-text report of correlation results
+}
+\examples{
 x1 <- rnorm(200, 10, 2)
 x2 <- rnorm(200, 15, 1.5)
 r_coef <- cor(x1, x2)
 report_r(r_coef)
-}
-\description{
-Generate an in-text report of correlation results
 }
