@@ -14,10 +14,10 @@ report_p <- function(pvalue = NULL, markdown = T) {
   if (markdown == T) {
     if (round(pvalue, 3) > 0) {
       pval <- sub("^(-?)0.", "\\1.", sprintf("%.3f", pvalue))
-      p_report <- paste("$\\textit{p}$ =", pval)
+      p_report <- paste("$\\emph{p}$ =", pval)
     }
     if (round(pvalue, 3) == 0) {
-      p_report <- paste("$\\textit{p}$ < .001")
+      p_report <- paste("$\\emph{p}$ < .001")
     }
   }
   if (markdown == F) {
